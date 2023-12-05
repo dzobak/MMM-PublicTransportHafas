@@ -95,7 +95,11 @@ module.exports = class HafasFetcher {
     filteredDepartures =
       this.departuresRemovedSurplusUnreachableDepartures(filteredDepartures);
     filteredDepartures = filteredDepartures.slice(0, maxElements);
-
+    for (let departure of filteredDepartures){
+      if (departure.line.name.match(/^\d\d?$/)){
+        departure.line.name = "STR " + departure.line.name
+      }
+    }
     return filteredDepartures;
   }
 
