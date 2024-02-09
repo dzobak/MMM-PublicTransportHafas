@@ -30,26 +30,26 @@
   },
   "dependencies": {
     "dayjs": "^1.11.10",
-    "hafas-client": "^6.2.0",
-    "husky": "^8.0.3"
+    "hafas-client": "^6.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^8.56.0",
-    "@stylistic/eslint-plugin": "^1.5.3",
+    "@stylistic/eslint-plugin": "^1.6.0",
     "eslint": "^8.56.0",
     "eslint-plugin-import": "^2.29.1",
     "globals": "^13.24.0",
-    "lint-staged": "^15.2.0",
-    "markdownlint-cli": "^0.38.0",
-    "prettier": "^3.1.1",
-    "stylelint": "^16.1.0",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.2",
+    "markdownlint-cli": "^0.39.0",
+    "prettier": "^3.2.5",
+    "stylelint": "^16.2.1",
     "stylelint-config-standard": "^36.0.0",
     "stylelint-prettier": "^5.0.0"
   },
   "scripts": {
-    "lint": "eslint . && stylelint **/*.css && markdownlint . --ignore node_modules && prettier --check .",
-    "lint:fix": "eslint . --fix && stylelint **/*.css --fix && markdownlint . --ignore node_modules --fix && prettier --write .",
-    "prepare": "husky install",
+    "lint": "eslint . && stylelint **/*.css && markdownlint . --ignore node_modules && prettier . --check",
+    "lint:fix": "eslint . --fix && stylelint **/*.css --fix && markdownlint . --ignore node_modules --fix && prettier . --write",
+    "prepare": "husky",
     "query": "node ./convenience/query_stations.mjs",
     "test": "npm run lint"
   },
