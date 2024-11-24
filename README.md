@@ -1,12 +1,6 @@
-# MMM-PublicTransportHafas
+# MMM-PublicTransportHafas [![GitHub license](https://img.shields.io/github/license/KristjanESPERANTO/mmm-publictransporthafas?style=plastic)](https://github.com/KristjanESPERANTO/mmm-publictransporthafas/blob/master/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/KristjanESPERANTO/mmm-publictransporthafas)](https://github.com/KristjanESPERANTO/mmm-publictransporthafas/issues) [![GitHub forks](https://img.shields.io/github/forks/KristjanESPERANTO/mmm-publictransporthafas)](https://github.com/KristjanESPERANTO/mmm-publictransporthafas/network) [![GitHub stars](https://img.shields.io/github/stars/KristjanESPERANTO/mmm-publictransporthafas)](https://github.com/KristjanESPERANTO/mmm-publictransporthafas/stargazers)
 
-[![npm version](https://img.shields.io/npm/v/hafas-client.svg)](https://www.npmjs.com/package/hafas-client)
-[![GitHub issues](https://img.shields.io/github/issues/KristjanESPERANTO/mmm-publictransporthafas)](https://github.com/KristjanESPERANTO/mmm-publictransporthafas/issues)
-[![GitHub forks](https://img.shields.io/github/forks/KristjanESPERANTO/mmm-publictransporthafas)](https://github.com/KristjanESPERANTO/mmm-publictransporthafas/network)
-[![GitHub stars](https://img.shields.io/github/stars/KristjanESPERANTO/mmm-publictransporthafas)](https://github.com/KristjanESPERANTO/mmm-publictransporthafas/stargazers)
-[![GitHub license](https://img.shields.io/github/license/KristjanESPERANTO/mmm-publictransporthafas?style=plastic)](https://github.com/KristjanESPERANTO/mmm-publictransporthafas/blob/master/LICENSE)
-
-**MMM-PublicTransportHafas is a module for [MagicMirror²](https://github.com/MagicMirrorOrg/MagicMirror) to display public transport departures.**
+**MMM-PublicTransportHafas** is a module for [MagicMirror²](https://github.com/MagicMirrorOrg/MagicMirror) to display public transport departures.
 
 - [Description](#description)
 - [How it works](#how-it-works)
@@ -23,7 +17,7 @@
 
 ## Description
 
-This module shows live public transport information in Germany for all stations known to the Deutsche Bahn system. Most public transportation providers in Germany providing information for that system so the coverage should be quite good. The data is provided by the fantastic [hafas-client](https://github.com/public-transport/hafas-client). Even in other european contries this module should work as HAFAS is widely used throughout Europe.
+This module shows live public transport information in Germany for all stations known to the Deutsche Bahn system. Most public transportation providers in Germany providing information for that system so the coverage should be quite good. The data is provided by the fantastic [hafas-client](https://github.com/public-transport/hafas-client). Even in other european countries this module should work as HAFAS is widely used throughout Europe.
 
 You can very easy adapt the shapes and line colors of your local transport companies. See [Providing a custom CSS file](#providing-a-custom-css-file).
 
@@ -39,14 +33,14 @@ For more information see the [Configuration](#configuration) section.
 |![Example: Goerdelerring Leipzig, all directions](img/Goerdelerring_all.png)<br>*Leipzig, Goerdelerring (all directions)*|![Example: Goerdelerring Leipzig, heading to main station](img/Goerdelerring_to_hbf.png)<br>*Leipzig, Goerdelerring (heading to main station)*|
 |---|---|
 |![Example: Hauptbahnhof, Leipzig, only tram](img/Hauptbahnhof_tram_only.png)<br>*Hauptbahnhof, Leipzig (displaying only trams and two unreachable departures)*|![Example: Hauptbahnhof, Leipzig, only regional and national trains](img/Hauptbahnhof_train_only.png)<br>*Hauptbahnhof, Leipzig (displaying only regional and national trains)*|
-|![Example: Leuschner Platz with relative departure time and reorderd columns](img/Leuschner_Platz_relative.png)<br>*Leuschner Platz, Leipzig (displaying departure times in relative format and reordered columns)*| |
+|![Example: Leuschner Platz with relative departure time and reordered columns](img/Leuschner_Platz_relative.png)<br>*Leuschner Platz, Leipzig (displaying departure times in relative format and reordered columns)*| |
 
 ![Example: Multiple instances in Berlin, showing the last update time](img/UpdateTimeDisplayed.png)<br>*Several instances in Berlin, showing the last update time*
 <!-- prettier-ignore-end -->
 
 ## Installation
 
-Just clone the module into your modules folder of your MagicMirror² and execute `npm ci` in the module’s directory:
+Just clone the module into your modules directory and install the dependencies:
 
 ```bash
 cd ~/MagicMirror/modules
@@ -57,7 +51,7 @@ npm ci
 
 ## Update
 
-Go to the module’s folder inside MagicMirror modules folder and pull the latest version from GitHub and install:
+Just enter the module's directory, pull the update and install the dependencies:
 
 ```bash
 cd ~/MagicMirror/modules/MMM-PublicTransportHafas
@@ -71,7 +65,7 @@ You need the `stationId` for the station whose departures should be displayed.
 
 Here's how to find out the `stationId`:
 
-1. You have to be in the modules folder (`MagicMirror/modules/MMM-PublicTransportHafas`).
+1. You have to be in the modules directory (`~/MagicMirror/modules/MMM-PublicTransportHafas`).
 2. Then run the following command: `npm run query`.
 3. Enter a station name. It is useful to enter a city name too since the system knows a lot of stations even outside Germany.
 4. The result could contain one or more possible stations with valid IDs.
@@ -109,9 +103,9 @@ npm run query sbb
 
 ## Configuration
 
-The module is quite configurable. The only option you really have to set is `stationID` - all other options are **optional**.
+### Configuration options
 
-These are the possible options:
+The module is quite configurable. The only option you really have to set is `stationID` - all other options are **optional**.
 
 <!-- prettier-ignore-start -->
 | Option                            | Description    |
@@ -122,8 +116,8 @@ These are the possible options:
 | `headerPrefix`                    | <p>The text to be prepended to the `stationName`.</p><p>**Type:** `string`<br>**Example:** `"von"` (Will result in “von Wilhelm-Leuschner-Platz” being displayed.)<br>**Default value:** `""`</p><p>**Note:** A blank between `headerPrefix` and `stationName` is automatically inserted.</p>|
 | `headerAppendix`                  | <p>The text to be prepended to the `stationName`.</p><p>**Type:** `string`<br>**Example:** `"(Richtung HBF)"`<br>**Default value:** `""`</p><p>**Note:** A blank between `headerAppendix` and `stationName` is automatically inserted.</p>|
 | `updatesEvery`                    | <p>The time in seconds when the displayed departures should be updated.</p><p>**Type:** `integer`<br>**Example:** `60` (The departures will be refreshed every minute.)<br>**Default value:** `120`<br>**Unit:** `seconds`</p><p>**Note:** The minimal refresh time is 30 seconds.</p>|
-| `direction`                       | <p>An ID of a station. It is used to display only those departures heading to this station.</p><p>**Type:** `string`<br>**Example:** `"954609"`<br>**Default value:** `""`</p><p>**Note:** It is not neccessary to find the ID of the end station. Just use the next station which is on the route you are after.<br>It is not possible to list multiple IDs. If you want to display different directions for one station use multiple instances of this module.</p>|
-| `ignoredLines`                    | <p>An array of strings describing the lines you want to exclude from the displayed departures.</p><p>**Type:** `array`<br>**Example:** `[ "STR 11", "STR 10" ]` (Displays all lines except tram 10 and 11.)<br>**Default value:** `[]`</p><p>**Note:** You need to provide the line names exactly as they are otherwise displayed. This setting is case sensitive. Blanks need to be exactly as they are display. If a line is usually displayes as `BUS  89` (two blanks) you need to type exactly that into the array.</p>|
+| `direction`                       | <p>An ID of a station. It is used to display only those departures heading to this station.</p><p>**Type:** `string`<br>**Example:** `"954609"`<br>**Default value:** `""`</p><p>**Note:** It is not necessary to find the ID of the end station. Just use the next station which is on the route you are after.<br>It is not possible to list multiple IDs. If you want to display different directions for one station use multiple instances of this module.</p>|
+| `ignoredLines`                    | <p>An array of strings describing the lines you want to exclude from the displayed departures.</p><p>**Type:** `array`<br>**Example:** `[ "STR 11", "STR 10" ]` (Displays all lines except tram 10 and 11.)<br>**Default value:** `[]`</p><p>**Note:** You need to provide the line names exactly as they are otherwise displayed. This setting is case sensitive. Blanks need to be exactly as they are display. If a line is usually displays as `BUS  89` (two blanks) you need to type exactly that into the array.</p>|
 | `ignoreRelatedStations`           | <p>Ignore departures from related stations or not.</p><p>**Type:** `boolean`<br>**Default value:** `false`<br>**Possible values:** `true` and `false`<p>**Note:** Usually you don't need to touch this option.</p>|
 | `excludedTransportationTypes`     | <p>An array of strings describing the transportation types you want to exclude from the displayed departures.</p><p>**Type:** `array`<br>**Example:** `[ "suburban", "bus" ]`<br>**Default value:** `[]`<br>**Possible values:** <table><tr><th>Type</th><th>Use in Germany</th></tr><tr><td>`"bus"`</td><td>bus</td></tr><tr><td>`"ferry"`</td><td>F&auml;hre</td></tr><tr><td>`"express"`</td><td>?</td></tr><tr><td>`"national"`</td><td>IC trains</td></tr><tr><td>`"nationalExpress"`</td><td>ICE trains</td></tr><tr><td>`"regional"`</td><td>RB or RE</td></tr><tr><td>`"suburban"`</td><td>S-Bahn</td></tr><tr><td>`"subway"`</td><td>U-Bahn</td></tr><tr><td>`"tram"`</td><td>Tram</td></tr><tr><td>`"taxi"`</td><td>Taxi</td></tr></table></p>|
 | `timeToStation`                   | <p>An integer indicating how long it takes you to get to the station.</p><p>**Type:** `integer`<br>**Example:** `5`<br>**Default value:** `10`<br>**Unit:** `minutes`</p>|
@@ -151,33 +145,35 @@ These are the possible options:
 | `animationSpeed`                  | <p>Speed of the update animation.</p><p>**Type:** `integer`<br>**Possible values:** `0` - `5000`<br>**Default value:** `2000`<br>**Unit:** `milliseconds`</p>|
 <!-- prettier-ignore-end -->
 
-Here is an example for an entry in `config.js`
+### Configuration example
+
+Here is an example for an entry in the modules array in your `config.js`:
 
 ```javascript
-{
-  module: "MMM-PublicTransportHafas",
-  position: "bottom_right",
+    {
+      module: "MMM-PublicTransportHafas",
+      position: "bottom_right",
 
-  config: {
-    // Departures options
-    stationID: "8012202",                   // Replace with your stationID!
-    stationName: "Wilhelm-Leuschner-Platz", // Replace with your station name!
-    direction: "",                    // Show only departures heading to this station. (A station ID.)
-    excludedTransportationTypes: [],  // Which transportation types should not be shown on the mirror? (comma-separated list of types) possible values: "tram", "bus", "suburban", "subway", "regional" and "national"
-    ignoredLines: [],                 // Which lines should be ignored? (comma-separated list of line names)
-    timeToStation: 10,                // How long do you need to walk to the next Station?
+      config: {
+        // Departures options
+        stationID: "8012202",                   // Replace with your stationID!
+        stationName: "Wilhelm-Leuschner-Platz", // Replace with your station name!
+        direction: "",                    // Show only departures heading to this station. (A station ID.)
+        excludedTransportationTypes: [],  // Which transportation types should not be shown on the mirror? (comma-separated list of types) possible values: "tram", "bus", "suburban", "subway", "regional" and "national"
+        ignoredLines: [],                 // Which lines should be ignored? (comma-separated list of line names)
+        timeToStation: 10,                // How long do you need to walk to the next Station?
 
-    // Look and Feel
-    displayLastUpdate: true,          // Display the last time of module update.
-    maxUnreachableDepartures: 0,      // How many unreachable departures should be shown?
-    maxReachableDepartures: 7,        // How many reachable departures should be shown?
-    showColoredLineSymbols: true,     // Want colored line symbols?
-    customLineStyles: "",             // Prefix for the name of the custom css file. ex: Leipzig-lines.css (case sensitive)
-    showOnlyLineNumbers: false,       // Display only the line number instead of the complete name, i. e. "11" instead of "STR 11"
-    showTableHeadersAsSymbols: true,  // Table Headers as symbols or text?
-    useColorForRealtimeInfo: true     // Want colored real time information (timeToStation, early)?
-  }
-},
+        // Look and Feel
+        displayLastUpdate: true,          // Display the last time of module update.
+        maxUnreachableDepartures: 0,      // How many unreachable departures should be shown?
+        maxReachableDepartures: 7,        // How many reachable departures should be shown?
+        showColoredLineSymbols: true,     // Want colored line symbols?
+        customLineStyles: "",             // Prefix for the name of the custom css file. ex: Leipzig-lines.css (case sensitive)
+        showOnlyLineNumbers: false,       // Display only the line number instead of the complete name, i. e. "11" instead of "STR 11"
+        showTableHeadersAsSymbols: true,  // Table Headers as symbols or text?
+        useColorForRealtimeInfo: true     // Want colored real time information (timeToStation, early)?
+      }
+    },
 ```
 
 ## Multiple instances
@@ -188,7 +184,7 @@ You can even use the same `stationID` in different instances. So you can display
 
 ## Providing a custom CSS file
 
-**Note:** For some cities, separate CSS files have already been created that contain the local line colours. You can look them up in the `css` folder. If you create a file for another city, feel free to send it to us.
+**Note:** For some cities, separate CSS files have already been created that contain the local line colors. You can look them up in the `css` directory. If you create a file for another city, feel free to send it to us.
 
 ### Colored line labels
 
@@ -196,7 +192,7 @@ If you set `showColoredLineSymbols` to `true` the module will try to colorize th
 
 To provide your own classes create a CSS file in the `css` directory of the module. It must be named like `<your custom name>-lines.css`, where `<your custom name>` can be any valid filename but should not contain blanks or dots. The part `<your custom name>` is then used in the config file as value for the `customLineStyles` property.
 
-In the example above “leipzig” is used as value for the `customLineStyles` property. Therefore there must be a file named `leipzig-lines.css` inside the `css` folder. If this is not the case the module won’t be started and it will not be visible. The browser’s console will show an error.
+In the example above “leipzig” is used as value for the `customLineStyles` property. Therefore there must be a file named `leipzig-lines.css` inside the `css` directory. If this is not the case the module won’t be started and it will not be visible. The browser’s console will show an error.
 
 Basically you can set whatever you want in the CSS file but it is recommended to only set the foreground and background color and the width. In some cases it is useful to change the border radius too. See the file `css/leipzig-lines.css` for reference and as a guideline.
 
@@ -204,25 +200,28 @@ Basically you can set whatever you want in the CSS file but it is recommended to
 
 In Leipzig the tram lines 2, 8 and 9 use a yellow color. Since the lines share the same settings the CSS class names are listed with commas so that the settings apply to each listed class.
 
-<!-- prettier-ignore-start -->
 ```css
-.str2, .str8, .str9 {
-  background-color: #f8c623;  /* yellow background */
-  color: black;               /* text color black */
+.str2,
+.str8,
+.str9 {
+  background-color: #f8c623; /* yellow background */
+  color: black; /* text color black */
 }
 ```
-<!-- prettier-ignore-end -->
 
 Some night buses in Leipzig use an orange-ish color.
 
-<!-- prettier-ignore-start -->
 ```css
-.busn1, .busn1e, .busn5, .busn5e, .busn8, .busn8e {
-  background-color: #ee9f2e;  /* orange-ish background */
-  color: #164585;             /* blue-ish text color */
+.busn1,
+.busn1e,
+.busn5,
+.busn5e,
+.busn8,
+.busn8e {
+  background-color: #ee9f2e; /* orange-ish background */
+  color: #164585; /* blue-ish text color */
 }
 ```
-<!-- prettier-ignore-end -->
 
 ### Customizing the color for delays
 
@@ -238,13 +237,13 @@ No delay or negative delays (the transport will arrive early) are displayed in g
 
 Sometimes there is no real-time data for a departure, in that case it is displayed with a question mark:
 
-![Time without relat time data](img/time_without_real_time_data.png)
+![Time without real time data](img/time_without_real_time_data.png)
 
 If you want to customize that include the classes `mmm-pth-has-delay` and `mmm-pth-to-early` in your custom CSS file and make the appropriate settings.
 
 ## Technical background details
 
-To limit the server request only when the module is displayed and/or the user is present, the update will be stopped when no instance of the module are displayed (module hidden e.g. by a [MMM-Carousel](https://github.com/lawrence-jeff/MMM-Carousel), [MMM-Pages](https://github.com/edward-shen/MMM-pages) or [MMM-Remote-Control](https://github.com/Jopyth/MMM-Remote-Control)). The update will also be stopped by the use of a PIR sensor using the module [MMM-PIR-Sensor](https://github.com/paviro/MMM-PIR-Sensor) (that sends the notification 'USER_PRESENCE'). No special configuration is needed for this behaviour.
+To limit the server request only when the module is displayed and/or the user is present, the update will be stopped when no instance of the module are displayed (module hidden e.g. by a [MMM-Carousel](https://github.com/lawrence-jeff/MMM-Carousel), [MMM-Pages](https://github.com/edward-shen/MMM-pages) or [MMM-Remote-Control](https://github.com/Jopyth/MMM-Remote-Control)). The update will also be stopped by the use of a PIR sensor using the module [MMM-PIR-Sensor](https://github.com/paviro/MMM-PIR-Sensor) (that sends the notification 'USER_PRESENCE'). No special configuration is needed for this behavior.
 
 Thanks to @AgP42 for this functionality!
 
@@ -261,3 +260,11 @@ Thanks to @AgP42 for this functionality!
 If you find any problems, bugs or have questions, please [open a GitHub issue](https://github.com/KristjanESPERANTO/MMM-PublicTransportHafas/issues) in this repository.
 
 Pull requests are of course also very welcome 🙂
+
+### Developer commands
+
+- `npm run lint` - Run linting and formatter checks.
+- `npm run lint:fix` - Fix linting and formatter issues.
+- `npm run test` - Run linting and formatter checks + Run spelling check.
+- `npm run test:spelling` - Run spelling check.
+- `npm run release` - Bump version for release.
